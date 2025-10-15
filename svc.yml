@@ -7,4 +7,5 @@ spec:
     app: game
   ports:
     - port: 8080
-  type: LoadBalancer
+      targetPort: 80
+  type: LoadBalance
