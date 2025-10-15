@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mario-game-service
+  labels:
+    app: game
+spec:
+  type: LoadBalancer
+  selector:
+    app: game
+  ports:
+      port: 80          # Port exposed by the LoadBalancer
+      targetPort: 8080  # Port your container listens on
