@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mario-deployment
+  labels:
+    app: game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: game
+  template:
+    metadata:
+      labels:
+        app: game
+    spec:
+      containers:
+        - name: mario-cont
+          image: govadoc746/mario:game
+          ports:
+            - containerPort: 80
